@@ -13,11 +13,84 @@
     
 <img id="map_image2" src="images/vaerktoejskategori.png" alt="" usemap="#Map"  />
 <map name="Map" id="Map">
-    <area alt="" title="" href="#" shape="rect" coords="701,586,825,669" />
+     <area alt="" title="" href="index.html" shape="rect" coords="528,206,628,270" />
     
+    <area alt="" title="SKRUER" href="skruer.html" shape="rect" coords="954,590,1096,684" />
+    
+    <area id="medarbejderknap" alt="" title="" href="#" shape="rect" coords="811,881,1258,943" />
+    
+     <area alt="" title="BESLAG" href="beslag.html" shape="rect" coords="955,494,1097,589" />
+    
+  
+    
+     <area alt="" title="" href="#" shape="rect" coords="1356,398,1497,493" />
+    
+    <area alt="" title="" href="#" shape="rect" coords="558,398,700,493" />
+    <area alt="" title="" href="#" shape="rect" coords="560,494,700,593" />
+    <area alt="" title="" href="#" shape="rect" coords="559,592,699,686" />
+    <area alt="" title="" href="#" shape="rect" coords="558,773,700,687" />
+    <area alt="" title="" href="#" shape="rect" coords="708,398,848,493" />
+    <area alt="" title="" href="#" shape="rect" coords="707,495,848,590" />
+    <area alt="" title="" href="#" shape="rect" coords="707,687,849,591" />
+    <area alt="" title="" href="#" shape="rect" coords="709,688,849,772" />
+    <area alt="" title="" href="#" shape="rect" coords="956,398,1096,493" />
+    <area alt="" title="" href="#" shape="rect" coords="956,687,1097,775" />
+    <area alt="" title="" href="#" shape="rect" coords="1104,396,1244,492" />
+    <area alt="" title="" href="#" shape="rect" coords="1104,493,1244,591" />
+    <area alt="" title="" href="#" shape="rect" coords="1103,592,1245,685" />
+    <area alt="" title="" href="#" shape="rect" coords="1104,686,1245,773" />
+   
+    <area alt="" title="" href="baadudstyr.html" shape="rect" coords="1357,495,1496,590" />
+    <area alt="" title="" href="#" shape="rect" coords="1356,591,1496,685" />
+    <area alt="" title="" href="#" shape="rect" coords="1356,688,1497,774" />
 </map>
     
+    
+    
+ <!-- pop-up-vindue -->
+<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal -->
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Du har tilkaldt en medarbejder</p>
+    <p>Vent venligst...</p>
+  </div>
+
+</div>
+        
+       <!-- pop-up window (tilkald medarbejder) --> 
+        <script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("medarbejderknap");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>  
+    
 </body> 
 
 </html>

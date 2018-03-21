@@ -10,21 +10,225 @@
 </head>
 
 <body>
+
     
-    <img id="map_image" src="images/bauhausmap.png" alt="" usemap="#Map" />
-<map name="Map" id="Map">
-    <area alt="" title="HAVE" href="#" shape="rect" coords="19,674,295,882" />
-    <area alt="" title="BELYSNING" href="#" shape="rect" coords="18,526,295,663" />
-    <area alt="" title="MALING" href="#" shape="rect" coords="18,379,151,515" />
-    <area alt="" title="VVSBAD" href="#" shape="rect" coords="20,228,401,368" />
-    <area alt="" title="TRÆLAST" href="#" shape="rect" coords="409,231,643,368" />
-    <area alt="" title="VÆRKTØJ" href="vaerktoejskategori.html" shape="rect" coords="257,378,506,482" />
-    <area alt="" title="GULV" href="#" shape="rect" coords="517,378,643,481" />
-    <area alt="" title="BYGGEMATERIALER" href="#" shape="rect" coords="654,231,848,484" />
-    <area alt="" title="tilkald medbarbejder" href="#" shape="rect" coords="491,769,960,832" />
+    <img id="map_image" src="images/start_map.png" alt="" usemap="#Map" />
+
+    <map name="Map" id="Map">
+    <area alt="" title="" href="#" shape="rect" coords="608,831,896,1045" />
+    <area alt="" title="" href="#" shape="rect" coords="608,679,894,822" />
+    <area alt="" title="" href="#" shape="rect" coords="608,525,745,670" />
+    <area alt="" title="" href="#" shape="rect" coords="608,373,1004,513" />
+    <area alt="" title="VÆRKTØJ" href="vaerktoejskategori.html" shape="rect" coords="856,525,1116,634" />
+    <area alt="" title="" href="#" shape="rect" coords="1012,373,1258,513" />
+    <area alt="" title="" href="#" shape="rect" coords="1126,523,1258,634" />
+    <area alt="" title="" href="#" shape="rect" coords="1264,371,1468,633" />
+    <area id="medarbejderknap" alt="" title="" href="#" shape="rect" coords="1100,931,1588,995" />
 </map>
-    
-    
+
+
+
+
+
+
+
+<!--Search bar start -->
+    <div class="search">
+
+        <input id="search" placeholder="Søg efter vare">
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function() {
+                $.widget("custom.catcomplete", $.ui.autocomplete, {
+                    _create: function() {
+                        this._super();
+                        this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+                    },
+                    _renderMenu: function(ul, items) {
+                        var that = this,
+                            currentCategory = "";
+                        $.each(items, function(index, item) {
+                            var li;
+                            if (item.category != currentCategory) {
+                                ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
+                                currentCategory = item.category;
+                            }
+                            li = that._renderItemData(ul, item);
+                            if (item.category) {
+                                li.attr("aria-label", item.category + " : " + item.label);
+                            }
+                        });
+                    }
+                });
+                var data = [{
+                        label: "Spande",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Murer værktøj",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Knive",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Diverse",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Hammer",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Boremaskiner",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Save",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Svensknøgler",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Skruetvinger",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Beslag",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Skruer",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Søm",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Dørhåndtag",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Vaterpas",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Koben",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Tommestok",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Reb & båndstrammer",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Båd udstyr",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Fiskegrej",
+                        category: "Værktøj"
+                    },
+                    {
+                        label: "Redningsvester",
+                        category: "Værktøj"
+                    }
+                ];
+
+                $("#search").catcomplete({
+                    delay: 0,
+                    source: data
+                });
+            });
+
+            
+                   <!-- pop-up-vindue -->
+            <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal -->
+        </script>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            
+            
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>Du har tilkaldt en medarbejder</p>
+                <br>
+                <br>
+                <p>Vent venligst</p>
+                
+                <span id="wait">.</span>
+
+<script>
+var dots = window.setInterval( function() {
+    var wait = document.getElementById("wait");
+    if ( wait.innerHTML.length > 2 ) 
+        wait.innerHTML = "";
+    else 
+        wait.innerHTML += ".";
+    }, 350);
+</script>
+                
+            </div>
+
+        </div>
+
+        <!-- pop-up window (tilkald medarbejder) -->
+        <script>
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("medarbejderknap");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+        </script>
+
+        <img class="search_icon" src="images/search.png" alt="Søgefelt ikon" width="7%">
+    </div>
+    <!--Search bar slut -->
+
 
 </body>
 
